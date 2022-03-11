@@ -30,6 +30,7 @@ html {
 body {
     margin: 0 auto;
     padding: 0;
+    font-size: 16px;
 }
 
 ul li {
@@ -39,6 +40,28 @@ ul li {
 
 a {
     text-decoration: none;
+}
+
+.btn-full-rounded {
+    text-transform: capitalize;
+    background: var(--clr-golden);
+    color: var(--clr-white);
+    padding: 8px 36px;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 18px;
+    border: 2px solid var(--clr-white);
+    cursor: pointer;
+    box-shadow: rgb(0 0 0 / 20%) 0px 1px 3px;
+    border-radius: 15px 0px;
+}
+
+.btn-full-rounded:hover {
+    color: var(--clr-golden);
+    background: var(--clr-white);
+    border: 2px solid var(--clr-golden);
+    transition: all 0.9s ease-in-out;
 }
 
 
@@ -66,6 +89,7 @@ nav {
     width: 100%;
     background: #fff;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    z-index: 99;
 }
 
 .fixed-nav .links a {
@@ -157,7 +181,36 @@ nav {
     .links a:hover {
         color: var(--clr-golden);
     }
+    nav ul li a:after {
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 6%;
+        color: transparent;
+        content: '•';
+        text-shadow: 0 0 transparent;
+        font-size: 1.2em;
+        line-height: 1;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        -ms-transition: all 0.25s ease-out;
+        -o-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
     nav ul li a:hover:after {
+        /* width: 100%; */
+        color: var(--clr-golden);
+        text-shadow: 10px 0 var(--clr-golden), -10px 0 var(--clr-golden);
+    }
+    /* nav ul li a:hover:after {
         width: 100%;
     }
     nav ul li a:after {
@@ -175,14 +228,14 @@ nav {
     nav ul li a:after,
     nav ul li a:before {
         transition: all .5s;
-    }
+    } */
 }
 
 
 /* hero */
 
 header {
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, -0.7)), url(../img/Gallery/banner1.jpg) center/cover no-repeat;
 }
 
@@ -213,32 +266,11 @@ header {
     margin: 80px 0;
 }
 
-.contact_us_btn {
-    text-transform: uppercase;
-    background: var(--clr-golden);
-    color: var(--clr-white);
-    padding: 10px 42px;
-    letter-spacing: 2px;
-    display: inline-block;
-    transition: 0.3s ease-in-out all;
-    font-size: 18px;
-    border: 2px solid var(--clr-white);
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 15px 0px;
-}
-
-.contact_us_btn:hover {
-    color: var(--clr-golden);
-    background: var(--clr-white);
-    border: 2px solid var(--clr-golden);
-    transition: all 0.9s ease-in-out;
-}
-
 
 /* sections and title */
 
-.title h2 {
+
+/* .title h2 {
     text-align: center;
     text-transform: uppercase;
 }
@@ -255,7 +287,241 @@ header {
 
 #services {
     background: var(--clr-white);
+} */
+
+.light-wrapper {
+    background: #FFF;
 }
+
+.inner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-title {
+    text-transform: capitalize;
+    font-family: Playfair Display;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.lead2 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.myService_header_section {
+    width: 50vw;
+    margin: 0px auto;
+}
+
+.myService_listing_section {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.weddingPhotography_card,
+.engagementPhotography_card,
+.familyPhotography_card {
+    border: 1px solid var(--clr-grey);
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+.weddingPhotography_card:hover,
+.engagementPhotography_card:hover,
+.familyPhotography_card:hover {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%) !important;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.weddingPhotography_card h5,
+.engagementPhotography_card h5,
+.familyPhotography_card h5 {
+    text-transform: capitalize;
+    font-family: Playfair Display;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.weddingPhotography_card p,
+.engagementPhotography_card p,
+.familyPhotography_card p {
+    font-size: 14px;
+}
+
+.dark-wrapper {
+    background: #181818;
+}
+
+
+/* video section */
+
+video {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.videos_right_section {
+    color: var(--clr-white);
+}
+
+.videos_header_section .title {
+    text-transform: capitalize;
+    font-family: Playfair Display;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.videos_header_section .subtitle {
+    text-transform: capitalize;
+    font-family: Playfair Display;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* Gallery section */
+
+.gallery {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+}
+
+.s-stretch {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.v-stretch {
+    grid-row: span 2;
+}
+
+.h-stretch {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+.big-stretch {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.gallery div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.gallery .big-stretch,
+.gallery .h-stretch,
+.gallery .v-stretch,
+.gallery .s-stretch {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery .big-stretch img,
+.gallery .h-stretch img,
+.gallery .v-stretch img,
+.gallery .s-stretch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.gallery .big-stretch:hover img,
+.gallery .h-stretch:hover img,
+.gallery .v-stretch:hover img,
+.gallery .s-stretch:hover img {
+    transform: scale(1.5);
+}
+
+@media (max-width:560px) {
+    .s-stretch {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    .v-stretch {
+        grid-row: span 1;
+    }
+    .h-stretch {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    .big-stretch {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+}
+
+
+/* contact us */
+
+.contact-from_section {
+    background: #FFFFFF;
+    padding: 25px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), 0 5px 5px 0 rgb(0 0 0 / 0%);
+    border-radius: 15px 0px 15px 15px;
+}
+
+.contactUs_left_section .title {
+    text-transform: capitalize;
+    font-family: Playfair Display;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contact-from_section .input-data-rams {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin: 40px 0;
+}
+
+.contact-from_section .input-data-rams input {
+    height: 100%;
+    width: 100%;
+    color: #5E6278;
+    border: none;
+    font-size: 14px;
+    border-bottom: 2px solid silver;
+    outline: none;
+}
+
+.contact-from_section .input-data-rams label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.contact-from_section .input-data-rams input:focus~label,
+.contact-from_section .input-data-rams input:valid~label {
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: var(--clr-golden);
+}
+
+
+/* Footer section */
 
 .footer_section {
     background: var(--clr-black);
